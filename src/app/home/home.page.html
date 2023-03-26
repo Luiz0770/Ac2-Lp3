@@ -1,0 +1,69 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      AC Calculos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-label>Tipo de envio:</ion-label>
+    <ion-select interface="popover" class="custom-options" [(ngModel)]="tipofrete">
+      <ion-select-option value="regular">Regular</ion-select-option>
+      <ion-select-option value="expresso">Expresso</ion-select-option>
+      <ion-select-option value="agendado">Agendado</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Digite o numero de produtos:</ion-label>
+    <ion-input [(ngModel)]="unidade" type="number"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Digite o peso do produto (Kg):</ion-label>
+    <ion-input [(ngModel)]="peso" type="number"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Digite a distancia (Km):</ion-label>
+    <ion-input [(ngModel)]="distancia" type="number"></ion-input>
+  </ion-item>
+
+  <ion-button class="botao" (click)="verificarRadio()">Verificar o frete</ion-button>
+
+  <ion-item-group class="resultado">
+    <p>Custo total de envio: R$</p>
+    <ion-input [readonly]="true" class="res" value="{{res}}"></ion-input>
+  </ion-item-group>
+
+  <table>
+    <tr>
+      <th>Tipo de Freteㅤㅤ</th>
+      <th>Preco por Km</th>
+    </tr>
+    <tr>
+      <td>Regular (5-9 dias)</td>
+      <td>R$0,5</td>
+    </tr>
+    <tr>
+      <td>Expresso (3-5 dias)</td>
+      <td>R$0,7</td>
+    </tr>
+    <tr>
+      <td>Agendado</td>
+      <td>R$0,9</td>
+    </tr>
+  </table>
+</ion-content>
+
+<!--ion-item-group class="resultado">
+  <p>Desconto de unidades: R$</p>
+  <ion-input [readonly]="true" class="desconto" value="{{res}}"></ion-input>
+</ion-item-group>
+
+<ion-item-group class="resultado">
+  <p>Desconto de distancia: R$</p>
+  <ion-input [readonly]="true" class="desconto" value="{{res}}"></ion-input>
+</ion-item-group-->
